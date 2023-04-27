@@ -1,7 +1,15 @@
 const superTest = require("supertest");
 const app = require("./app");
 const request = superTest(app);
+let server;
 
+// beforeEach(async () => {
+//   server = await app.listen(4000);
+// });
+
+// afterEach(async () => {
+//   await server.close();
+// });
 describe("Test Get /names", () => {
   test("It Should respond name with 200 success", async () => {
     const data = await request
