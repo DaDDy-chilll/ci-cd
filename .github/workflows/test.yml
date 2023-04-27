@@ -7,9 +7,9 @@ on:
   release:
     types: [created]
   push:
-    branches: [main]
+    branches: [daddy]
   pull_request:
-    branches: [main]
+    branches: [daddy]
 
   workflow_dispatch:
 
