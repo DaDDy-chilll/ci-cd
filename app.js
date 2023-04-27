@@ -1,7 +1,8 @@
+require("dotenv").config({ path: ".env" });
 const express = require("express");
 const cors = require("cors");
 const app = express();
-
+const PORT = process.env.PORT || 8000;
 app.use(cors({ origin: "*" }));
 
 app.get("/names", (req, res) => {
@@ -10,6 +11,9 @@ app.get("/names", (req, res) => {
   });
 });
 
-app.listen(4000, () => {
-  console.log("Server is running on Port:4000");
-});
+async function startServer() {
+  app.listen(PORT, () => {
+    console.log(`Server is running on Port:${PORT}`);
+  });
+}
+module.exports = app;
